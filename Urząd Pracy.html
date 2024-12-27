@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Urząd Pracy</title>
+    <style>
+        /* Podstawowe style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #271200;
+        }
+
+        header {
+            background-image: url(https://cdn.discordapp.com/attachments/1276956039375491158/1322303211754885200/image.png?ex=67706254&is=676f10d4&hm=216fb95754b1c3295f5e8bd4c2f91a28c8e70825ed65a536551f3ed115378f85&);
+            background-position: center;
+            background-color: #000000;
+            color: rgb(41, 40, 40);
+            padding: 200px 0;
+            line-height: 5;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem; /* Rozmiar czcionki */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(22, 22, 22, 0.5); /* Cień dla tekstu, aby był bardziej widoczny na tle */
+        }
+
+        header nav {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            gap: 8px;
+        }
+
+        header nav a {
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            font-family: 'Georgia', serif;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+    
+
+        section {
+            padding: 100px;
+            margin: 100px;
+            background-color: white;
+            border-radius: 10px;
+            display: none; /* Sekcje są domyślnie ukryte */
+        }
+
+        .active {
+            display: block; /* Sekcje wyświetlają się tylko wtedy, gdy mają klasę 'active' */
+        }
+
+        footer {
+            background-color: #242424;
+            color: rgb(71, 50, 50);
+            padding: 0.5px;
+            text-align: center;
+        }
+
+        section {
+            font-family: 'Georgia', serif; /* Czcionka dla sekcji */
+            font-size: 20px; /* Rozmiar czcionki */
+            line-height: 1.6; /* Interlinia */
+            padding: 100px;
+            background-color: #777777;
+            margin: 100px;
+            border-radius: 8px;
+        }
+
+    
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Nagłówek i menu -->
+    <header>
+        <h1></h1>
+        <nav>
+            <a href="javascript:void(0)" onclick="showSection('about')">Firmy</a>
+            <a href="javascript:void(0)" onclick="showSection('services')">Formularze Rekrutacyjne</a>
+            <a href="javascript:void(0)" onclick="showSection('contact')">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Sekcja o nas -->
+    <section id="about" class="about">
+        <h2>Obecne Firmy</h2>
+        <p>DOJ -> Rekrutacja otwarta🟩</p>
+        <p>SASP -> Rekrutacja otwarta🟩 </p>
+        <p>EMS -> Rekrutacja otwarta🟩 </p>
+        <p>LSC -> Rekrutacja otwarta🟩 </p>
+        <p>RUSTY GARAGE -> Rekrutacja otwarta🟩 </p>
+        <p>TACO LIBRE -> Rekrutacja zamknięta🟥</p>
+        <p>AMMUNATION -> Rekrutacja otwarta🟩 </p>
+    </section>
+
+    <!-- Sekcja usług -->
+    <section id="services" class="services">
+        <h2>Formularze</h2>
+        <a href="https://forms.gle/WeU7jJrmWMaAuj4G9">DOJ 💼</a><br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc0_DHPczcnu8UNTNxaZx0uSSohuNSsT8WWs_xl5HcIW5qYUg/viewform">SASP 🚔</a><br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdRq-MhwFdhDnNZzJyzPWk7uLdZ5-riVJlUNTAatWMMPLf92Q/viewform">EMS 🚑</a><br>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf23y84zVTzpPh2fj7OxwqE3A1Un0u4zyW08p2V8P7bgvQDsQ/viewform?usp=sf_link">LSC 🛠</a><br>
+        <a href="Brak">RUSTY GARAGE 🛠 - Brak Formularza</a><br>
+        <a href="Brak">TACO LIBRE 🌮 - Brak Formularza</a><br>
+        <a href="Brak">AMMUNATION 🔫 - Brak Formularza</a><br>
+
+    </section>
+
+    <!-- Sekcja kontaktowa -->
+    <section id="contact" class="contact">
+        <h2>Kontakt</h2>
+      <p> DOJ -> MAKARENKA<33 </p>
+      <p> SASP -> Podpowiedz </p>
+      <p> EMS -> ♡✞𝔁𝓣𝓮𝓷𝓼𝓱𝓲_✞♡ </p>
+      <p> LSC -> Mr.Patiii </p>
+      <p> Rusty Garage -> Loganeczek </p>
+      <p> Taco Libre -> -
+      <p> Ammunation -> FIlip_8 </p>
+
+       
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>By Limek</p>
+    </footer>
+
+    <script>
+        // Funkcja do pokazywania odpowiedniej sekcji po kliknięciu w menu
+        function showSection(sectionId) {
+            // Ukrywanie wszystkich sekcji
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Pokazywanie wybranej sekcji
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
+        // Domyślnie pokazujemy sekcję "O nas"
+        window.onload = function () {
+            showSection('about');
+        };
+    </script>
+
+</body>
+
+</html>
